@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heima.user.mapper.ApUserInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.heima.user.entity.ApUserInfo">
+        <id column="id" property="id" />
+        <result column="user_id" property="userId" />
+        <result column="name" property="name" />
+        <result column="idno" property="idno" />
+        <result column="company" property="company" />
+        <result column="occupation" property="occupation" />
+        <result column="age" property="age" />
+        <result column="birthday" property="birthday" />
+        <result column="introduction" property="introduction" />
+        <result column="location" property="location" />
+        <result column="fans" property="fans" />
+        <result column="follows" property="follows" />
+        <result column="is_recommend_me" property="isRecommendMe" />
+        <result column="is_recommend_friend" property="isRecommendFriend" />
+        <result column="is_display_image" property="isDisplayImage" />
+        <result column="updated_time" property="updatedTime" />
+    </resultMap>
+
+</mapper>

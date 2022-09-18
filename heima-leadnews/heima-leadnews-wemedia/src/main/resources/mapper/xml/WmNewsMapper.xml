@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heima.wemedia.mapper.WmNewsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.heima.wemedia.entity.WmNews">
+        <id column="id" property="id" />
+        <result column="wm_user_id" property="wmUserId" />
+        <result column="title" property="title" />
+        <result column="content" property="content" />
+        <result column="type" property="type" />
+        <result column="channel_id" property="channelId" />
+        <result column="labels" property="labels" />
+        <result column="created_time" property="createdTime" />
+        <result column="submited_time" property="submitedTime" />
+        <result column="status" property="status" />
+        <result column="publish_time" property="publishTime" />
+        <result column="reason" property="reason" />
+        <result column="article_id" property="articleId" />
+        <result column="images" property="images" />
+        <result column="enable" property="enable" />
+    </resultMap>
+
+</mapper>

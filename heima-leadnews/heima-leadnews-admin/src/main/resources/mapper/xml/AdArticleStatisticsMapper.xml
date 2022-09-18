@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heima.admin.mapper.AdArticleStatisticsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.heima.admin.entity.AdArticleStatistics">
+        <id column="id" property="id" />
+        <result column="article_we_media" property="articleWeMedia" />
+        <result column="article_crawlers" property="articleCrawlers" />
+        <result column="channel_id" property="channelId" />
+        <result column="read_20" property="read20" />
+        <result column="read_100" property="read100" />
+        <result column="read_count" property="readCount" />
+        <result column="comment" property="comment" />
+        <result column="follow" property="follow" />
+        <result column="collection" property="collection" />
+        <result column="forward" property="forward" />
+        <result column="likes" property="likes" />
+        <result column="unlikes" property="unlikes" />
+        <result column="unfollow" property="unfollow" />
+        <result column="created_time" property="createdTime" />
+    </resultMap>
+
+</mapper>
