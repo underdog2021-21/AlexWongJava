@@ -1,9 +1,7 @@
-/*
 package com.heima.search.test;
 
 import com.heima.article.client.ArticleFeign;
 import com.heima.model.article.dtos.ArticleDto;
-import com.heima.model.behavior.dtos.CollectionBehaviorDto;
 import com.heima.search.service.ApUserSearchService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,7 +24,7 @@ public class Db2Es {
     @Test
     public void testDb2Es(){
 
-        int page=1,size=2;
+        int page=1,size=3;
         while(true) {
 //        远程调用article服务，获取文章数据
             List<ArticleDto> articleDtoList = articleFeign.findByPage(page, size);
@@ -35,7 +33,7 @@ public class Db2Es {
             }
             System.out.println("#######page=="+page);
 //        调用方法导入Es
-            apUserSearchService.importArticle(articleDtoList);
+            apUserSearchService.creatIndexBatch(articleDtoList);
             if(articleDtoList.size()<size){
                 break;
             }
@@ -43,4 +41,4 @@ public class Db2Es {
         }
     }
 }
-*/
+

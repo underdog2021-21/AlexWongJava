@@ -178,4 +178,18 @@ public class ApArticleServiceImpl extends ServiceImpl<ApArticleMapper, ApArticle
         List<ArticleDto> articleDtos = BeanHelper.copyWithCollection(records, ArticleDto.class);
         return articleDtos;
     }
+
+    @Override
+    public List<ArticleDto> findByPage(Integer size, Integer page) {
+        Page<ApArticle> apArticlePage = new Page<>(size, page);
+        LambdaQueryWrapper<ApArticle> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        lambdaQueryWrapper.eq(ApArticle::getIsDelete, false)
+                .eq(ApArticle::getIsDown, false);
+        IPage<ApArticle> apArticleIPage = page(apArticlePage, lambdaQueryWrapper);
+        if (!CollectionUtils.isEmpty(apArticleIPage.getRecords()) && apArticleIPage != null) {
+            List<ArticleDto> articleDtos = BeanHelper.copyWithCollection(apArticleIPage.getRecords(), ArticleDto.class);
+            return articleDtos;
+        }
+        return null;
+    }
 }

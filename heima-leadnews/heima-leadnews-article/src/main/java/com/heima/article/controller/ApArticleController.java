@@ -6,10 +6,7 @@ import com.heima.model.article.dtos.ArticleDto;
 import com.heima.model.article.dtos.ArticleHomeDto;
 import com.heima.model.media.dtos.WmNewsResultDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -40,5 +37,12 @@ public class ApArticleController {
     @PostMapping("/api/v1/article/loadnew")
     public ResponseResult<List<ArticleDto>> loadnew(@RequestBody ArticleHomeDto dto) {
         return ResponseResult.ok(apArticleService.load(dto,2));
+    }
+
+    @GetMapping("/api/v1/article/findByPage")
+    public List<ArticleDto> findByPage(@RequestParam("size") Integer size,
+                                       @RequestParam("page") Integer page) {
+
+        return apArticleService.findByPage(size, page);
     }
 }
