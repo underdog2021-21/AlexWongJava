@@ -1,6 +1,7 @@
 package com.heima.search.service;
 
 import com.heima.model.article.dtos.ArticleDto;
+import com.heima.model.search.dtos.UserSearchDto;
 
 import java.util.List;
 
@@ -10,4 +11,8 @@ public interface ApUserSearchService {
      * @param articleDtoList
      */
     void creatIndexBatch(List<ArticleDto> articleDtoList);
+
+    List<ArticleDto> search(UserSearchDto dto);
+
+    void db2ES();
 }

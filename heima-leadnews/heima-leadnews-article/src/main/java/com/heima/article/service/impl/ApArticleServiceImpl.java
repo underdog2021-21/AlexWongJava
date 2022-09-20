@@ -20,6 +20,7 @@ import com.heima.common.util.BeanHelper;
 import com.heima.model.article.dtos.ArticleDto;
 import com.heima.model.article.dtos.ArticleHomeDto;
 import com.heima.model.media.dtos.WmNewsResultDTO;
+import com.heima.search.service.ApUserSearchService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -51,6 +52,9 @@ public class ApArticleServiceImpl extends ServiceImpl<ApArticleMapper, ApArticle
     private ArticleFreemarkerService articleFreemarkerService;
     @Autowired
     private ThreadPoolTaskExecutor taskExecutor;
+
+    @Autowired
+    private ApUserSearchService apUserSearchService;
 
     @Override
     public void upOrDown(Map<String, Long> map) {
@@ -154,6 +158,9 @@ public class ApArticleServiceImpl extends ServiceImpl<ApArticleMapper, ApArticle
             e.printStackTrace();
             throw new LeadException(AppHttpCodeEnum.SERVER_ERROR);
         }
+
+
+
     }
 
     @Override
