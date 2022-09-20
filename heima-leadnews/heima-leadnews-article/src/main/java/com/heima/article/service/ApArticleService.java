@@ -37,5 +37,5 @@ public interface ApArticleService extends IService<ApArticle> {
    List<ArticleDto> load(ArticleHomeDto dto,int type);
 
     void upOrDown(Map<String, Long> map);
-    List<ArticleDto> findByPage(Integer size, Integer page);
+    List<ArticleDto> findByPage(Integer page,Integer size);
 }

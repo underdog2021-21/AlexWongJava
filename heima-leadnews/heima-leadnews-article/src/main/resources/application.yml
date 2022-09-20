@@ -12,7 +12,7 @@ spring:
     nacos:
       server-addr: 192.168.173.131:8848
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: 192.168.173.131:9092
     consumer:
       group-id: ${spring.application.name}-test
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer

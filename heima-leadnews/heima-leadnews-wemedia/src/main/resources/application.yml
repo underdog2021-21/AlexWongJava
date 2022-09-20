@@ -15,7 +15,7 @@ spring:
     host: 192.168.173.131
     port: 6379
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: 192.168.173.131:9092
     producer:
       retries: 3
       key-serializer: org.apache.kafka.common.serialization.StringSerializer

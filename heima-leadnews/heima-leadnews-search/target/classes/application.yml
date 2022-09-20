@@ -7,7 +7,7 @@ spring:
     nacos:
       discovery:
         server-addr: 192.168.173.131:8848
-#自定义elasticsearch连接配置
+
 elasticsearch:
   host: 192.168.173.131
   port: 9200

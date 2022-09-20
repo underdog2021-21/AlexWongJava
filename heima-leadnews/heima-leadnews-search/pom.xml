@@ -11,6 +11,10 @@
 
     <artifactId>heima-leadnews-search</artifactId>
 
+    <properties>
+        <jakarta-json.version>2.0.1</jakarta-json.version>
+        <elasticsearch.version>8.4.1</elasticsearch.version>
+    </properties>
     <dependencies>
         <!-- 引入依赖模块 -->
         <dependency>
@@ -36,16 +40,21 @@
 			<groupId>com.alibaba.cloud</groupId>
 			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
 		</dependency>
-        <!--elasticsearch-->
+        <!-- 引入es依赖 -->
         <dependency>
             <groupId>co.elastic.clients</groupId>
             <artifactId>elasticsearch-java</artifactId>
-            <version>8.4.1</version>
+            <version>${elasticsearch.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.12.3</version>
+            <groupId>jakarta.json</groupId>
+            <artifactId>jakarta.json-api</artifactId>
+            <version>${jakarta-json.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <dependency>
             <groupId>com.heima</groupId>

@@ -24,8 +24,6 @@ public interface ArticleFeign {
 
     @PostMapping("/api/v1/article/save")
     Long saveArticle(@RequestBody WmNewsResultDTO dto);
-
     @GetMapping("/api/v1/article/findByPage")
-    public List<ArticleDto> findByPage(@RequestParam("size") Integer size,
-                                       @RequestParam("page") Integer page);
+    List<ArticleDto> findByPage(@RequestParam("page") Integer page,@RequestParam("size") Integer size);
 }

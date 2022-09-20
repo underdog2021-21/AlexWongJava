@@ -40,9 +40,7 @@ public class ApArticleController {
     }
 
     @GetMapping("/api/v1/article/findByPage")
-    public List<ArticleDto> findByPage(@RequestParam("size") Integer size,
-                                       @RequestParam("page") Integer page) {
-
-        return apArticleService.findByPage(size, page);
+    public List<ArticleDto> findByPage(@RequestParam("page") Integer page,@RequestParam("size") Integer size) {
+        return apArticleService.findByPage(page,size);
     }
 }

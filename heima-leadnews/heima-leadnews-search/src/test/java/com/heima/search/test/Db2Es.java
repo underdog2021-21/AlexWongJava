@@ -24,7 +24,7 @@ public class Db2Es {
     @Test
     public void testDb2Es(){
 
-        int page=1,size=3;
+        int page=1,size=5;
         while(true) {
 //        远程调用article服务，获取文章数据
             List<ArticleDto> articleDtoList = articleFeign.findByPage(page, size);
